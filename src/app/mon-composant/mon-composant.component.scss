@@ -1,0 +1,150 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ddd8d8;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  margin: 20px;
+}
+
+.card {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(255, 0, 0);
+  background-color: rgb(255, 255, 255); 
+  color: rgba(0, 0, 0, 0.934); 
+}
+
+.bb {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.card {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.counter-card {
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & button {
+    margin-bottom: 15vh;
+    width: 50vh;
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+.counter-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.bubble-content {
+  display: flex;
+  justify-content: center;
+
+  .bubule {
+    width: 30vh;
+    height: 10vh;
+    background-color: rgba(199, 199, 199, 0.425);
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(54, 54, 54, 0.836);
+    text-align: center;
+  }
+}
+
+.bubule {
+  width: 30vh;
+  height: 10vh;
+  background-color: rgba(233, 4, 4, 0.5);
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(54, 54, 54, 0.377);
+  text-align: center;
+  margin-bottom: 100px;
+  margin-top: 1px;
+}
+
+.counter-text {
+  margin-top: 10%;
+  font-size: 16px;
+  font-weight: bold;
+  color: #db1616;
+}
+
+mat-card table {
+  width: 100%;
+  height: 300px;
+  background-color: #d1d1d1;
+}
+
+.table-form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.table-card {
+  width: 48%;
+}
+
+.form-card {
+  width: 48%;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.form-field {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-field:last-child {
+  margin-right: 0;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.hidden-label {
+  display: none;
+}
+
+.centered-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; 
+}

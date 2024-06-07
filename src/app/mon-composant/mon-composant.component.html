@@ -1,0 +1,163 @@
+<div class="container">
+  <!-- Grande carte contenant le compteur -->
+  <mat-card class="card counter-card">
+    <mat-card-header class="bb">
+      <div class="container">
+        <h1 class="title card-title">Compteur Angular Material</h1>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="bubble-content">
+        <div class="bubble">
+          <p class="counter-text">Nombre actuel: {{ counter }}</p>
+        </div>
+      </div>
+    </mat-card-content>
+    <div class="btn">
+      <div>
+        <button
+          mat-raised-button
+          class="my-button"
+          color="primary"
+          (click)="increment()"
+        >
+          Augmenter
+        </button>
+      </div>
+      <div>
+        <button
+          mat-raised-button
+          class="my-button"
+          color="warn"
+          (click)="decrement()"
+        >
+          Diminuer
+        </button>
+      </div>
+    </div>
+  </mat-card>
+
+  <!-- Conteneur pour le tableau et le formulaire -->
+  <div class="table-form-container">
+    <!-- Formulaire -->
+    <mat-card class="card form-card">
+      <mat-card-content>
+        <h2>Formulaire</h2>
+        <div class="form-container">
+          <div class="form-row">
+            <div class="form-field">
+              <mat-form-field appearance="fill">
+                <mat-label>Nom</mat-label>
+                <input
+                  matInput
+                  [formControl]="nom"
+                  (input)="sanitizeNom()"
+                />
+              </mat-form-field>
+            </div>
+            <div class="form-field">
+              <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input
+                  matInput
+                  [formControl]="email"
+                  (input)="sanitizeEmail()"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <mat-form-field appearance="fill">
+                <mat-label>Téléphone</mat-label>
+                <input
+                  matInput
+                  [formControl]="telephone"
+                  (input)="sanitizeTelephone()"
+                />
+              </mat-form-field>
+            </div>
+            <div class="form-field">
+              <mat-form-field appearance="fill">
+                <mat-label>Message</mat-label>
+                <textarea
+                  matInput
+                  [formControl]="message"
+                  (input)="sanitizeMessage()"
+                  id="message"
+                  name="message"
+                  pattern="^[a-zA-ZÀ-ÿ0-9\s.,'!?]+$"
+                  title="Les caractères spéciaux ne sont pas autorisés."
+                ></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Tableau -->
+    <mat-card class="card table-card">
+      <mat-card-content>
+        <h1 class="title card-title">Tableau de voitures</h1>
+        <table
+          mat-table
+          [dataSource]="voitures"
+          class="mat-elevation-z8 demo-table"
+        >
+          <ng-container matColumnDef="marque">
+            <th mat-header-cell *matHeaderCellDef>Marque</th>
+            <td mat-cell *matCellDef="let element">{{ element.marque }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="model">
+            <th mat-header-cell *matHeaderCellDef>Modèle</th>
+            <td mat-cell *matCellDef="let element">{{ element.model }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="couleur">
+            <th mat-header-cell *matHeaderCellDef>Couleur</th>
+            <td mat-cell *matCellDef="let element">{{ element.couleur }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="annee">
+            <th mat-header-cell *matHeaderCellDef>Année</th>
+            <td mat-cell *matCellDef="let element">{{ element.annee }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="neuve">
+            <th mat-header-cell *matHeaderCellDef>Neuve</th>
+            <td mat-cell *matCellDef="let element">
+              <button
+                mat-button
+                color="primary"
+                *ngIf="element.neuve"
+                (click)="setNeuveFalse(element)"
+              >
+                Vrai
+              </button>
+              <button
+                mat-button
+                color="warn"
+                *ngIf="!element.neuve"
+                (click)="setNeuveTrue(element)"
+              >
+                Faux
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Bouton pour naviguer vers une autre page -->
+  <div class="centered-button">
+    <button mat-button color="primary" (click)="goToNewPage()">
+      Aller vers le Tableau des Produits
+    </button>
+  </div>
+</div>

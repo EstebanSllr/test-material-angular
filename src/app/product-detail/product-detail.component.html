@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="product-container">
+    <mat-card class="product-card">
+      <div class="card-content">
+        <img [src]="product.image" alt="{{ product.nom }}" class="product-image">
+        <div class="barcode"><strong>Code Barre:</strong> {{ product.codeBarre }}</div>
+        <div class="details">
+          <div class="left-column">
+            <h1>{{ product.nom }}</h1>
+            <h2>{{ product.marque }}</h2>
+            <h6>{{ formatPoid(product.poid) }}</h6>
+          </div>
+          <div class="right-column">
+            <h1 class="price">{{ formatPrix(product.prix) }}</h1>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
